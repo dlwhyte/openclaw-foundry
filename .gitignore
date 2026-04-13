@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.*
+
+# OpenClaw config (contains secrets)
+openclaw.json
+credentials/
+
+# Node
+node_modules/
