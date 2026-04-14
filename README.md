@@ -18,10 +18,10 @@ Each module is self-contained and can be read independently, but the recommended
 |---|--------|--------|-------------|
 | 00 | [Introduction](00-introduction/) | ✅ | What OpenClaw is, architecture, security landscape |
 | 01 | [Setup](01-setup/) | ✅ | Deployment paths, install, security hardening |
-| 02 | [Model Config](02-model-config/) | 🚧 | Provider setup, local models, hybrid routing |
-| 03 | [Skills & Plugins](03-skills-plugins/) | 🚧 | ClawHub registry, vetting third-party skills |
-| 04 | [Prompt Injection](04-prompt-injection/) | 🚧 | Threat model, defenses, testing strategies |
-| 05 | [Network Hardening](05-network-hardening/) | 🚧 | VPS lockdown, Tailscale, firewall rules |
+| 02 | [Model Config](02-model-config/) | ✅ | Provider setup, local models, hybrid routing |
+| 03 | [Skills & Plugins](03-skills-plugins/) | ✅ | ClawHub registry, vetting third-party skills |
+| 04 | [Prompt Injection](04-prompt-injection/) | ✅ | Threat model, defenses, testing strategies |
+| 05 | [Network Hardening](05-network-hardening/) | ✅ | VPS lockdown, Tailscale, firewall rules |
 
 ---
 
