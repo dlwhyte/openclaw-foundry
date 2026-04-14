@@ -8,48 +8,47 @@ A practitioner's guide to building [OpenClaw](https://github.com/openclaw/opencl
 
 ```mermaid
 flowchart LR
-    START(["🖥️ You &amp; a machine"])
+    START(["💻 You & a machine"])
 
-    subgraph INSTALL ["⚙️  INSTALL"]
+    subgraph INSTALL ["📦  INSTALL"]
         direction TB
-        M00["📖 **00 · Introduction**
+        M00["📋 **00 · Introduction**
         Architecture · CVEs
         Threat landscape"]
-        M01["🔧 **01 · Setup**
+        M01["📦 **01 · Setup**
         3 deploy paths
         Secure install
         Channel hardening"]
         M00 --> M01
     end
 
-    subgraph CONFIGURE ["🤖  CONFIGURE"]
+    subgraph CONFIGURE ["🔌  CONFIGURE"]
         direction TB
-        M02["🧠 **02 · Model Config**
+        M02["🔌 **02 · Model Config**
         API providers
         Local via Ollama
         Hybrid routing"]
-        M03["🧩 **03 · Skills**
+        M03["🧱 **03 · Skills**
         ClawHub registry
-        Vetting &amp; pinning
+        Vetting & pinning
         Supply chain"]
         M02 --> M03
     end
 
-    subgraph HARDEN ["🔒  HARDEN"]
+    subgraph HARDEN ["🛡️  HARDEN"]
         direction TB
-        M04["💉 **04 · Prompt Injection**
+        M04["⚠️ **04 · Prompt Injection**
         Attack patterns
         Defense strategies
         Testing"]
-        M05["🌐 **05 · Network**
+        M05["🔗 **05 · Network**
         Loopback · SSH
         Tailscale · UFW
         Reverse proxy"]
         M04 --> M05
     end
 
-    END(["✅ OpenClaw,
-    running securely"])
+    END(["🛡️ OpenClaw, running securely"])
 
     START --> INSTALL
     INSTALL --> CONFIGURE
@@ -57,12 +56,10 @@ flowchart LR
     HARDEN --> END
 
     style START fill:#d4edda,stroke:#28a745,color:#155724
-    style END   fill:#d4edda,stroke:#28a745,color:#155724
-
-    style INSTALL   fill:#fffde7,stroke:#f9a825
+    style END fill:#d4edda,stroke:#28a745,color:#155724
+    style INSTALL fill:#fffde7,stroke:#f9a825
     style CONFIGURE fill:#e3f2fd,stroke:#1565c0
-    style HARDEN    fill:#fce4ec,stroke:#c62828
-
+    style HARDEN fill:#fce4ec,stroke:#c62828
     style M00 fill:#fff9c4,stroke:#f9a825,color:#333
     style M01 fill:#fff9c4,stroke:#f9a825,color:#333
     style M02 fill:#bbdefb,stroke:#1565c0,color:#333
@@ -73,9 +70,9 @@ flowchart LR
 
 | Phase | Modules | What you get |
 |-------|---------|--------------|
-| ⚙️ Install | 00 · 01 | Architecture understanding + a running, patched instance |
-| 🤖 Configure | 02 · 03 | Model backend wired up + skills vetted and pinned |
-| 🔒 Harden | 04 · 05 | Injection defenses + network locked down |
+| 📦 Install | 00 · 01 | Architecture understanding + a running, patched instance |
+| 🔌 Configure | 02 · 03 | Model backend wired up + skills vetted and pinned |
+| 🛡️ Harden | 04 · 05 | Injection defenses + network locked down |
 
 ---
 
@@ -91,12 +88,12 @@ Each module is self-contained and can be read independently, but the recommended
 
 | # | Module | Status | Description |
 |---|--------|--------|-------------|
-| 00 | [Introduction](00-introduction/) | ✅ | What OpenClaw is, architecture, security landscape |
-| 01 | [Setup](01-setup/) | ✅ | Deployment paths, install, security hardening |
-| 02 | [Model Config](02-model-config/) | ✅ | Provider setup, local models, hybrid routing |
-| 03 | [Skills & Plugins](03-skills-plugins/) | ✅ | ClawHub registry, vetting third-party skills |
-| 04 | [Prompt Injection](04-prompt-injection/) | ✅ | Threat model, defenses, testing strategies |
-| 05 | [Network Hardening](05-network-hardening/) | ✅ | VPS lockdown, Tailscale, firewall rules |
+| 00 | [Introduction](00-introduction/) | ![done](https://img.shields.io/badge/status-done-brightgreen) | What OpenClaw is, architecture, security landscape |
+| 01 | [Setup](01-setup/) | ![done](https://img.shields.io/badge/status-done-brightgreen) | Deployment paths, install, security hardening |
+| 02 | [Model Config](02-model-config/) | ![done](https://img.shields.io/badge/status-done-brightgreen) | Provider setup, local models, hybrid routing |
+| 03 | [Skills & Plugins](03-skills-plugins/) | ![done](https://img.shields.io/badge/status-done-brightgreen) | ClawHub registry, vetting third-party skills |
+| 04 | [Prompt Injection](04-prompt-injection/) | ![done](https://img.shields.io/badge/status-done-brightgreen) | Threat model, defenses, testing strategies |
+| 05 | [Network Hardening](05-network-hardening/) | ![done](https://img.shields.io/badge/status-done-brightgreen) | VPS lockdown, Tailscale, firewall rules |
 
 ---
 
