@@ -7,66 +7,75 @@ A practitioner's guide to building [OpenClaw](https://github.com/openclaw/opencl
 ## What this guide gives you
 
 ```mermaid
-flowchart TD
-    A([You have a machine<br/>and want OpenClaw]) --> B
+flowchart LR
+    START(["🖥️ You &amp; a machine"])
 
-    B["📖 00 · Introduction
-    ────────────────────
-    What OpenClaw is
-    3-layer architecture
-    CVE landscape
-    Threat model overview"]
+    subgraph INSTALL ["⚙️  INSTALL"]
+        direction TB
+        M00["📖 **00 · Introduction**
+        Architecture · CVEs
+        Threat landscape"]
+        M01["🔧 **01 · Setup**
+        3 deploy paths
+        Secure install
+        Channel hardening"]
+        M00 --> M01
+    end
 
-    B --> C["🔧 01 · Setup
-    ────────────────────
-    3 deployment paths
-    Secure install sequence
-    CVE patching
-    Channel hardening"]
+    subgraph CONFIGURE ["🤖  CONFIGURE"]
+        direction TB
+        M02["🧠 **02 · Model Config**
+        API providers
+        Local via Ollama
+        Hybrid routing"]
+        M03["🧩 **03 · Skills**
+        ClawHub registry
+        Vetting &amp; pinning
+        Supply chain"]
+        M02 --> M03
+    end
 
-    C --> D["🤖 02 · Model Config
-    ────────────────────
-    API providers
-    Local models (Ollama)
-    Hybrid routing
-    Cost vs. capability"]
+    subgraph HARDEN ["🔒  HARDEN"]
+        direction TB
+        M04["💉 **04 · Prompt Injection**
+        Attack patterns
+        Defense strategies
+        Testing"]
+        M05["🌐 **05 · Network**
+        Loopback · SSH
+        Tailscale · UFW
+        Reverse proxy"]
+        M04 --> M05
+    end
 
-    D --> E["🧩 03 · Skills & Plugins
-    ────────────────────
-    ClawHub registry
-    Vetting & typosquatting
-    Version pinning
-    Supply chain safety"]
+    END(["✅ OpenClaw,
+    running securely"])
 
-    E --> F["💉 04 · Prompt Injection
-    ────────────────────
-    Direct vs. indirect attacks
-    5 attack patterns
-    6 defense strategies
-    Testing your config"]
+    START --> INSTALL
+    INSTALL --> CONFIGURE
+    CONFIGURE --> HARDEN
+    HARDEN --> END
 
-    F --> G["🌐 05 · Network Hardening
-    ────────────────────
-    Loopback binding
-    SSH key-only auth
-    Tailscale / UFW
-    Reverse proxy + HTTPS"]
+    style START fill:#d4edda,stroke:#28a745,color:#155724
+    style END   fill:#d4edda,stroke:#28a745,color:#155724
 
-    G --> H([OpenClaw running securely<br/>on your infrastructure])
+    style INSTALL   fill:#fffde7,stroke:#f9a825
+    style CONFIGURE fill:#e3f2fd,stroke:#1565c0
+    style HARDEN    fill:#fce4ec,stroke:#c62828
 
-    style A fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
-    style H fill:#e8f5e9,stroke:#388e3c,color:#1b5e20
-    style B fill:#fff8e1,stroke:#f9a825,color:#333
-    style C fill:#fff8e1,stroke:#f9a825,color:#333
-    style D fill:#fff8e1,stroke:#f9a825,color:#333
-    style E fill:#fff3e0,stroke:#ef6c00,color:#333
-    style F fill:#fce4ec,stroke:#c62828,color:#333
-    style G fill:#fce4ec,stroke:#c62828,color:#333
+    style M00 fill:#fff9c4,stroke:#f9a825,color:#333
+    style M01 fill:#fff9c4,stroke:#f9a825,color:#333
+    style M02 fill:#bbdefb,stroke:#1565c0,color:#333
+    style M03 fill:#bbdefb,stroke:#1565c0,color:#333
+    style M04 fill:#ffcdd2,stroke:#c62828,color:#333
+    style M05 fill:#ffcdd2,stroke:#c62828,color:#333
 ```
 
-> **Modules 00–01** get you from zero to a running installation.
-> **Modules 02–03** configure what the agent can do.
-> **Modules 04–05** lock down how it does it.
+| Phase | Modules | What you get |
+|-------|---------|--------------|
+| ⚙️ Install | 00 · 01 | Architecture understanding + a running, patched instance |
+| 🤖 Configure | 02 · 03 | Model backend wired up + skills vetted and pinned |
+| 🔒 Harden | 04 · 05 | Injection defenses + network locked down |
 
 ---
 
